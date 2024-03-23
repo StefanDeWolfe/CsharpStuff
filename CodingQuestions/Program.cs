@@ -8,8 +8,8 @@ string reverseThis = "Lorem Ipsum";
 string reversedString = "muspI meroL";
 Console.WriteLine("Reverse String: " + reverseThis);
 string reversed = StringManipulation.Reverse(reverseThis);
-Console.WriteLine("Expected Reversed String: " + reversedString);
-Console.WriteLine("Actual Reversed String: " + reversed);
+Console.WriteLine($"Expected Reversed String: {reversedString}");
+Console.WriteLine($"Actual Reversed String: {reversed}");
 if (reversed.Equals(reversedString))
 {
     Console.WriteLine("***Pass\n");
@@ -24,8 +24,8 @@ string[] nonPalendromeStr = new string[] { "melon", "success" };
 string[] palendromeStr = new string[] { "deified", "racecar" };
 for (int i = 0; i < nonPalendromeStr.Length; i++)
 {
-    Console.WriteLine("String to check: " + nonPalendromeStr[i]);
-    Console.WriteLine("Is Palendrome: " + StringManipulation.IsPalendrome(nonPalendromeStr[i]).ToString());
+    Console.WriteLine($"String to check: {nonPalendromeStr[i]}");
+    Console.WriteLine($"Is Palendrome: {StringManipulation.IsPalendrome(nonPalendromeStr[i])}");
     if (StringManipulation.IsPalendrome(nonPalendromeStr[i]).Equals(false))
     {
         Console.WriteLine("***Pass\n");
@@ -37,8 +37,8 @@ for (int i = 0; i < nonPalendromeStr.Length; i++)
 }
 for (int i = 0; i < palendromeStr.Length; i++)
 {
-    Console.WriteLine("String to check: " + palendromeStr[i]);
-    Console.WriteLine("Is Palendrome: " + StringManipulation.IsPalendrome(palendromeStr[i]).ToString());
+    Console.WriteLine($"String to check: {palendromeStr[i]}");
+    Console.WriteLine($"Is Palendrome: {StringManipulation.IsPalendrome(palendromeStr[i])}");
     if (StringManipulation.IsPalendrome(palendromeStr[i]).Equals(true))
     {
         Console.WriteLine("***Pass\n");
@@ -54,8 +54,8 @@ Console.WriteLine("String Check for Substring:");
 string strMain = "Does this contain the substring?";
 string strNotContain = "coin";
 string strContained = "this";
-Console.WriteLine("Main string: " + strMain);
-Console.WriteLine("Looking for : " + strContained);
+Console.WriteLine($"Main string: {strMain}");
+Console.WriteLine($"Looking for : {strContained}");
 if (StringManipulation.ContainsSubstring(strMain, strContained, StringComparison.OrdinalIgnoreCase).Equals(true))
 {
     Console.WriteLine("***Pass\n");
@@ -65,9 +65,9 @@ else
     Console.WriteLine("***Failure\n");
 }
 
-Console.WriteLine("Main string: " + strMain);
-Console.WriteLine("Looking for string: " + strNotContain);
-if (StringManipulation.ContainsSubstring(strMain, strContained, StringComparison.OrdinalIgnoreCase).Equals(false))
+Console.WriteLine($"Main string: {strMain}");
+Console.WriteLine($"Looking for : {strNotContain}");
+if (StringManipulation.ContainsSubstring(strMain, strNotContain, StringComparison.OrdinalIgnoreCase).Equals(false))
 {
     Console.WriteLine("***Pass\n");
 }
@@ -85,15 +85,13 @@ int[] primes = { 2, 3, 5, 7, 11, 13, 53 };
 for (int i =0; i < notPrimes.Length; i++)
 {
     bool isPrime = NumberManipulation.IsPrime(notPrimes[i]);
-    Console.WriteLine("Is " + notPrimes[i].ToString() + " Prime?: " + isPrime.ToString());
-    Console.WriteLine("is Correct: " + (isPrime.Equals(false)).ToString());
+    Console.WriteLine($"Is {notPrimes[i]} Prime?: {isPrime} | Is Correct {isPrime.Equals(false)}");
 }
 Console.WriteLine("");
 for (int i = 0; i < primes.Length; i++)
 {
     bool isPrime = NumberManipulation.IsPrime(primes[i]);
-    Console.WriteLine("Is " + primes[i].ToString() + " Prime?: " + isPrime.ToString());
-    Console.WriteLine("is Correct: " + (isPrime.Equals(true)).ToString());
+    Console.WriteLine($"Is {primes[i]} Prime?: {isPrime} | Is Correct {isPrime.Equals(true)}");
 }
 
 Console.WriteLine("");
